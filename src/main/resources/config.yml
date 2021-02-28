@@ -1,0 +1,57 @@
+#delete lore if you want
+ARMORS:
+  RED:
+    NAME: "&4&lRed Armors"
+    PERMS: "red.armors"
+    LORE: "&3&lColor: &4&lRed"
+  BLUE:
+    NAME: "&3&lBlue Armors"
+    PERMS: "blue.armors"
+    LORE: "&3&lColor: &3&lBlue"
+  GREEN:
+    NAME: "&3&lGreen Armors"
+    PERMS: "green.armors"
+    LORE: "&3&lColor: &a&lGreen"
+  ORANGE:
+    NAME: "&3&lOrange Armors"
+    PERMS: "orange.armors"
+    LORE: "&3&lColor: &a&lOrange"
+  YELLOW:
+    NAME: "&3&lYellow Armors"
+    PERMS: "yellow.armors"
+    LORE: "&3&lColor: &a&lYellow"
+  BLACK:
+    NAME: "&3&lBlack Armors"
+    PERMS: "black.armors"
+    LORE: "&3&lColor: &a&lBlack"
+  AQUA:
+    NAME: "&3&lAqua Armors"
+    PERMS: "aqua.armors"
+    LORE: "&3&lColor: &a&lAqua"
+  PURPLE:
+    NAME: "&3&lPurple Armors"
+    PERMS: "purple.armors"
+    LORE: "&3&lColor: &a&lPurple"
+  GRAY:
+    NAME: "&3&lGray Armors"
+    PERMS: "gray.armors"
+    LORE: "&3&lColor: &a&lGray"
+  MAROON:
+    NAME: "&3&lMaroon Armors"
+    PERMS: "maroon.armors"
+    LORE: "&3&lColor: &a&lMaroon"
+
+
+# Messages
+NO-PERMS: "&cYou dont have permissions to use this cosmetic!"
+
+# Item
+ITEM:
+  STATUS: true
+  SLOTS: 1 #Set a free slots
+  NAME: "&4Cosmetic"
+  LORE: "Edit this in config.yml"
+
+# Gadgets
+GADGETS:
+  SLOTS: 8 #Set a free slots
