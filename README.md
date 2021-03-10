@@ -16,7 +16,11 @@ Spigot 1.7.10
 Lombok
 
 
-#Information
+# Information
 
 If you want add more gadgets or trails look the code and copy the example
+
+# Permissions
+
+
 
