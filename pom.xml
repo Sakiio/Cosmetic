@@ -6,12 +6,11 @@
 
     <groupId>me.sakio.cosmetic</groupId>
     <artifactId>Cosmetic</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Cosmetic</name>
 
-    <description>Basic Cosmetic Plugin</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

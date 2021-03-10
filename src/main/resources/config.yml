@@ -40,6 +40,10 @@ ARMORS:
     NAME: "&3&lMaroon Armors"
     PERMS: "maroon.armors"
     LORE: "&3&lColor: &a&lMaroon"
+  RAINBOW:
+    NAME: "&3&lRainbow Armors"
+    PERMS: "rainbow.armors"
+    LORE: "&3&lColor: &a&lRainbow"
 
 
 # Messages

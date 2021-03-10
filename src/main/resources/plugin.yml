@@ -2,5 +2,4 @@ name: sCosmetic
 version: ${project.version}
 main: me.sakio.cosmetic.Cosmetic
 api-version: 1.8.9
-authors: DevSakio
-description: discord.gg/pandacommunity
+authors: [Sakio_]

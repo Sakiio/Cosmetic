@@ -4,6 +4,7 @@ import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;
+import me.sakio.cosmetic.utils.task.RainbowTask;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -88,6 +89,12 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                 .setLore(Arrays.asList(
                         "",
                         " &3&lClick to set a &a&lMaroon Armors",
+                        ""
+                )).build());
+        this.inventory.setItem(29, new ItemMaker(Material.LEATHER_CHESTPLATE).setColor(Color.SILVER).setTitle("Rainbow Armor")
+                .setLore(Arrays.asList(
+                        "",
+                        " &3&lClick to set a &a&lRainbow Armors",
                         ""
                 )).build());
         this.inventory.setItem(40, new ItemMaker(Material.REDSTONE).setTitle("&cReset Armors").
@@ -198,6 +205,15 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                 case 24:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.MAROON.PERMS"))) {
                         getArmor(player, Color.MAROON, "MAROON");
+                        player.closeInventory();
+                        break;
+                    }
+                    player.sendMessage(me.sakio.cosmetic.utils.Color.translate
+                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                    break;
+                case 29:
+                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.RAINBOW.PERMS"))) {
+                        RainbowTask.players.add(player);
                         player.closeInventory();
                         break;
                     }

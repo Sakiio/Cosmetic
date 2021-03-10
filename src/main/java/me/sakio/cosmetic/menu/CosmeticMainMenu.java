@@ -92,6 +92,7 @@ public class CosmeticMainMenu extends ChestMenu<Cosmetic> {
                     new GadgetsMenu().open(player);
                     break;
                 case 16:
+                    new PetsMenu().open(player);
                     break;
                 case 22:
                     player.getInventory().setHelmet(null);

@@ -8,6 +8,7 @@ import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.utils.commands.CommandFramework;
 import me.sakio.cosmetic.utils.menu.MenuListener;
+import me.sakio.cosmetic.utils.task.RainbowTask;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,12 +23,14 @@ public final class Cosmetic extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Bukkit.getServer().getConsoleSender().sendMessage("Working | sCosmetic");
         instance = this;
         this.playerData = new PlayerData();
         reloadConfig();
         saveDefaultConfig();
         this.registerCommands();
         this.registerListeners();
+        Bukkit.getScheduler().runTaskTimer(this, new RainbowTask(), 20, 0);
     }
 
     @Override

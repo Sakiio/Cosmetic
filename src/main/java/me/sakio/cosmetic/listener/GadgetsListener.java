@@ -14,6 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import sun.net.www.ApplicationLaunchException;
 
 /**
  * Created by DevSakio
@@ -34,6 +35,11 @@ public class GadgetsListener implements Listener {
         if (playerData.getGadgets(player).equals(Gadgets.SNOW_PEARLS.getName())){
             player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.SNOW_BALL).setAmount(64).build());
         }
+
+        if (playerData.getGadgets(player).equals(Gadgets.LITGTH_STRIKE.getName())){
+            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.BLAZE_ROD).setAmount(1).build());
+        }
+
     }
     public void onEventItem(PlayerInteractEvent event) {
         if (event.getItem() == null) return;
@@ -73,7 +79,8 @@ public class GadgetsListener implements Listener {
             event.getPlayer().updateInventory();
             event.setCancelled(false);
         }
-        if (event.getItem().getType() == Material.BOW) {
+        if (event.getItem().getType() == Material.BLAZE_ROD){
+            event.getPlayer().getWorld().spigot().strikeLightning(event.getPlayer().getLocation(), false);
         }
     }
 }

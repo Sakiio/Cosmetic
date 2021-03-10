@@ -23,8 +23,6 @@ public class Color {
 		return Cosmetic.getInstance().getDescription().getVersion();
 	}
 
-	public static String getDescription() { return Cosmetic.getInstance().getDescription().getDescription(); }
-
 	public static List<String> getAuthor() {
 		return Cosmetic.getInstance().getDescription().getAuthors();
 	}
