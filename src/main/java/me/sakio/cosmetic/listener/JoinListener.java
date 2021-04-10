@@ -28,6 +28,7 @@ public class JoinListener implements Listener {
     public void JoinEvent(PlayerJoinEvent event){
         Player player = event.getPlayer();
         PlayerData playerData = Cosmetic.getInstance().getPlayerData();
+        DataFile.getConfig().save();
         if (Cosmetic.getInstance().getConfig().getBoolean("ITEM.STATUS")){
             player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("ITEM.SLOTS"), new ItemMaker(Material.ENDER_CHEST).
                     setTitle(Cosmetic.getInstance().getConfig().getString("ITEM.NAME")).
@@ -37,7 +38,6 @@ public class JoinListener implements Listener {
             playerData.setTrails(player, Trails.DEFAULT);
             playerData.setGadgets(player, Gadgets.DEFAULT);
         }
-        DataFile.getConfig().save();
     }
     @EventHandler
     public void onClick(PlayerInteractEvent event){
