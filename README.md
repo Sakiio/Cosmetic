@@ -1,6 +1,5 @@
 # Cosmetic
-Basic Cosmetic Plugin
-
+Addons to use in your lobby
 
 # Commands and permissions
 
