@@ -57,7 +57,7 @@ public class Cosmetic extends JavaPlugin {
         Arrays.stream(listeners).forEach(l -> Bukkit.getServer().getPluginManager().registerEvents(l, this));
     }
     public static Cosmetic getInstance(){
-        return instance;
+        return Cosmetic.getPlugin(Cosmetic.class);
     }
     public PlayerData getPlayerData(){
         return new PlayerData();
