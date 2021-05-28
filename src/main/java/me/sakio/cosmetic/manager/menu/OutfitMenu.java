@@ -1,6 +1,7 @@
 package me.sakio.cosmetic.manager.menu;
 
 import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.utils.ArmorUtils;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;
@@ -123,7 +124,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
             switch (event.getRawSlot()) {
                 case 11:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.RED.PERMS"))) {
-                        getArmor(player, Color.RED, "RED");
+                        ArmorUtils.getArmor(player, Color.RED, "RED");
                         player.closeInventory();
                         break;
                     }
@@ -132,7 +133,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 12:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.BLUE.PERMS"))) {
-                        getArmor(player, Color.BLUE, "BLUE");
+                        ArmorUtils.getArmor(player, Color.BLUE, "BLUE");
                         player.closeInventory();
                         break;
                     }
@@ -141,7 +142,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 13:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.GREEN.PERMS"))) {
-                        getArmor(player, Color.GREEN, "GREEN");
+                        ArmorUtils.getArmor(player, Color.GREEN, "GREEN");
                         player.closeInventory();
                         break;
                     }
@@ -150,7 +151,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 14:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.ORANGE.PERMS"))) {
-                        getArmor(player, Color.ORANGE, "ORANGE");
+                        ArmorUtils.getArmor(player, Color.ORANGE, "ORANGE");
                         player.closeInventory();
                         break;
                     }
@@ -159,7 +160,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 15:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.YELLOW.PERMS"))) {
-                        getArmor(player, Color.YELLOW, "YELLOW");
+                        ArmorUtils.getArmor(player, Color.YELLOW, "YELLOW");
                         player.closeInventory();
                         break;
                     }
@@ -168,7 +169,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 20:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.BLACK.PERMS"))) {
-                        getArmor(player, Color.BLACK, "BLACK");
+                        ArmorUtils.getArmor(player, Color.BLACK, "BLACK");
                         player.closeInventory();
                         break;
                     }
@@ -177,7 +178,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 21:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.AQUA.PERMS"))) {
-                        getArmor(player, Color.AQUA, "AQUA");
+                        ArmorUtils.getArmor(player, Color.AQUA, "AQUA");
                         player.closeInventory();
                         break;
                     }
@@ -186,7 +187,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 22:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.PURPLE.PERMS"))) {
-                        getArmor(player, Color.PURPLE, "PURPLE");
+                        ArmorUtils.getArmor(player, Color.PURPLE, "PURPLE");
                         player.closeInventory();
                         break;
                     }
@@ -195,7 +196,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 23:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.GRAY.PERMS"))) {
-                        getArmor(player, Color.GRAY, "GRAY");
+                        ArmorUtils.getArmor(player, Color.GRAY, "GRAY");
                         player.closeInventory();
                         break;
                     }
@@ -204,7 +205,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 24:
                     if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.MAROON.PERMS"))) {
-                        getArmor(player, Color.MAROON, "MAROON");
+                        ArmorUtils.getArmor(player, Color.MAROON, "MAROON");
                         player.closeInventory();
                         break;
                     }
@@ -235,27 +236,5 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     }
             }
         }
-    }
-    private void getArmor(Player player, Color color, String nameColor) {
-        ItemStack helmet = new ItemMaker(Material.LEATHER_HELMET).
-                setColor(color).
-                setTitle(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".NAME")).
-                setLore(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".LORE")).build();
-        ItemStack chestplate = new ItemMaker(Material.LEATHER_CHESTPLATE).
-                setColor(color).
-                setTitle(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".NAME")).
-                setLore(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".LORE")).build();
-        ItemStack leggings = new ItemMaker(Material.LEATHER_LEGGINGS).
-                setColor(color).
-                setTitle(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".NAME")).
-                setLore(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".LORE")).build();
-        ItemStack boots = new ItemMaker(Material.LEATHER_BOOTS).
-                setColor(color).
-                setTitle(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".NAME")).
-                setLore(Cosmetic.getInstance().getConfig().getString("ARMORS." + nameColor + ".LORE")).build();
-        player.getInventory().setHelmet(helmet);
-        player.getInventory().setChestplate(chestplate);
-        player.getInventory().setLeggings(leggings);
-        player.getInventory().setBoots(boots);
     }
 }

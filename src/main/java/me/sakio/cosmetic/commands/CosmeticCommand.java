@@ -17,10 +17,8 @@ public class CosmeticCommand {
     public void OnCommand(CommandArgs cmd) {
         Player player = cmd.getPlayer();
         String[] args = cmd.getArgs();
-            player.sendMessage(Color.translate("&c-------------------------------------------------"));
-            player.sendMessage(Color.translate("&c&l" + Color.getName()));
-            player.sendMessage(Color.translate("&c&lAuthor: " + Color.getAuthor()));
-            player.sendMessage(Color.translate("&c&lVersions: " + Color.getVersion()));
-            player.sendMessage(Color.translate("&c-------------------------------------------------"));
+            player.sendMessage(Color.translate("&8------------------------------------------------"));
+            player.sendMessage(Color.translate("           &3&lSakio Cosmetics | 1.0"));
+            player.sendMessage(Color.translate("&8-------------------------------------------------"));
     }
 }

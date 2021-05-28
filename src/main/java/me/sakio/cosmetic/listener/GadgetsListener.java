@@ -43,7 +43,7 @@ public class GadgetsListener implements Listener {
         if (event.getItem() == null) return;
         if (event.getAction() == Action.LEFT_CLICK_AIR) return;
         if (event.getAction() == Action.LEFT_CLICK_BLOCK) return;
-
+        Player player = event.getPlayer();
         Action action = event.getAction();
 
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
@@ -51,34 +51,34 @@ public class GadgetsListener implements Listener {
                 return;
             }
             if (event.getItem().getType() == Material.ENDER_PEARL) {
-                if (event.getPlayer().getVehicle() != null) {
-                    event.getPlayer().getVehicle().remove();
-                    event.getPlayer().eject();
+                if (player.getVehicle() != null) {
+                    player.getVehicle().remove();
+                    player.eject();
                 }
-                event.getPlayer().spigot().setCollidesWithEntities(false);
-                event.getPlayer().setVelocity(event.getPlayer().getLocation().getDirection().normalize().setY(1.2f));
-                event.getPlayer().setVelocity(event.getPlayer().getLocation().getDirection().normalize().multiply(2.6f));
-                event.getPlayer().updateInventory();
-                event.getPlayer().setItemInHand(event.getPlayer().getItemInHand());
-                event.getPlayer().updateInventory();
+                player.spigot().setCollidesWithEntities(false);
+                player.setVelocity(player.getLocation().getDirection().normalize().setY(1.2f));
+                player.setVelocity(player.getLocation().getDirection().normalize().multiply(2.6f));
+                player.updateInventory();
+                player.setItemInHand(player.getItemInHand());
+                player.updateInventory();
                 event.setCancelled(false);
             }
         }
         if (event.getItem().getType() == Material.SNOW_BALL) {
-            if (event.getPlayer().getVehicle() != null) {
-                event.getPlayer().getVehicle().remove();
-                event.getPlayer().eject();
+            if (player.getVehicle() != null) {
+                player.getVehicle().remove();
+                player.eject();
             }
-            event.getPlayer().spigot().setCollidesWithEntities(false);
-            event.getPlayer().setVelocity(event.getPlayer().getLocation().getDirection().normalize().setY(1.2f));
-            event.getPlayer().setVelocity(event.getPlayer().getLocation().getDirection().normalize().multiply(2.6f));
-            event.getPlayer().updateInventory();
-            event.getPlayer().setItemInHand(event.getPlayer().getItemInHand());
-            event.getPlayer().updateInventory();
+            player.spigot().setCollidesWithEntities(false);
+            player.setVelocity(player.getLocation().getDirection().normalize().setY(1.2f));
+            player.setVelocity(player.getLocation().getDirection().normalize().multiply(2.6f));
+            player.updateInventory();
+            player.setItemInHand(player.getItemInHand());
+            player.updateInventory();
             event.setCancelled(false);
         }
         if (event.getItem().getType() == Material.BLAZE_ROD){
-            event.getPlayer().getWorld().spigot().strikeLightning(event.getPlayer().getLocation(), false);
+            player.getWorld().spigot().strikeLightning(player.getLocation(), false);
         }
     }
 }

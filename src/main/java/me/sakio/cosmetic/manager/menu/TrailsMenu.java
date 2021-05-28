@@ -3,6 +3,7 @@ package me.sakio.cosmetic.manager.menu;
 import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.manager.objects.Trails;
+import me.sakio.cosmetic.utils.Color;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;
@@ -73,14 +74,14 @@ public class TrailsMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 40 :
                     if (playerData.getTrails(player).length() == 0) {
-                        player.sendMessage(me.sakio.cosmetic.utils.Color.translate("&cYou dont have any trails to remove!"));
+                        player.sendMessage(Color.translate("&cYou dont have any trails to remove!"));
                         break;
                     }
                     if (playerData.getTrails(player).length() > 0) {
                         playerData.setTrails(player , Trails.DEFAULT);
-                        player.sendMessage(me.sakio.cosmetic.utils.Color.translate("&cAll trails remove"));
-                        break;
+                        player.sendMessage(Color.translate("&cAll trails remove"));
                     }
+                    break;
             }
         }
     }
