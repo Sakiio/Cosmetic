@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.commands;
 
-import me.sakio.cosmetic.menu.CosmeticMainMenu;
+import me.sakio.cosmetic.manager.menu.CosmeticMainMenu;
 import me.sakio.cosmetic.utils.commands.Command;
 import me.sakio.cosmetic.utils.commands.CommandArgs;
 import org.bukkit.entity.Player;

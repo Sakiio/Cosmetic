@@ -2,19 +2,15 @@ package me.sakio.cosmetic.listener;
 
 import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.provider.Gadgets;
-import me.sakio.cosmetic.manager.provider.Trails;
-import me.sakio.cosmetic.menu.CosmeticMainMenu;
+import me.sakio.cosmetic.manager.objects.Gadgets;
 import me.sakio.cosmetic.utils.ItemMaker;
 import org.bukkit.Material;
-import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import sun.net.www.ApplicationLaunchException;
 
 /**
  * Created by DevSakio
@@ -23,6 +19,7 @@ import sun.net.www.ApplicationLaunchException;
  * Class: GadgetsListener
  */
 public class GadgetsListener implements Listener {
+    @EventHandler
     public void onJoinItem(PlayerJoinEvent event){
         Player player = event.getPlayer();
         PlayerData playerData = Cosmetic.getInstance().getPlayerData();
@@ -41,6 +38,7 @@ public class GadgetsListener implements Listener {
         }
 
     }
+    @EventHandler
     public void onEventItem(PlayerInteractEvent event) {
         if (event.getItem() == null) return;
         if (event.getAction() == Action.LEFT_CLICK_AIR) return;

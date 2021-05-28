@@ -2,9 +2,9 @@ package me.sakio.cosmetic.listener;
 
 import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.provider.Gadgets;
-import me.sakio.cosmetic.manager.provider.Trails;
-import me.sakio.cosmetic.menu.CosmeticMainMenu;
+import me.sakio.cosmetic.manager.objects.Gadgets;
+import me.sakio.cosmetic.manager.objects.Trails;
+import me.sakio.cosmetic.manager.menu.CosmeticMainMenu;
 import me.sakio.cosmetic.utils.DataFile;
 import me.sakio.cosmetic.utils.ItemMaker;
 import org.bukkit.Material;
@@ -12,10 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
-
-import java.util.Arrays;
 
 /**
  * Created by DevSakio
@@ -34,11 +31,13 @@ public class JoinListener implements Listener {
                     setTitle(Cosmetic.getInstance().getConfig().getString("ITEM.NAME")).
                     setLore(Cosmetic.getInstance().getConfig().getString("ITEM.LORE")).build());
         }
-        if (player.hasPlayedBefore()){
+        if (!player.hasPlayedBefore()){
+            playerData.createData(player);
             playerData.setTrails(player, Trails.DEFAULT);
             playerData.setGadgets(player, Gadgets.DEFAULT);
         }
     }
+
     @EventHandler
     public void onClick(PlayerInteractEvent event){
         if (event.getItem() == null) return;
@@ -56,6 +55,7 @@ public class JoinListener implements Listener {
             }
         }
     }
+
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event){
         DataFile.getConfig().save();

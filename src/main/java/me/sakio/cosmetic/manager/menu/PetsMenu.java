@@ -1,18 +1,14 @@
-package me.sakio.cosmetic.menu;
+package me.sakio.cosmetic.manager.menu;
 
 import me.sakio.cosmetic.Cosmetic;
-import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.provider.Trails;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;
-import org.bukkit.Difficulty;
 import org.bukkit.Material;
 import org.bukkit.entity.Creeper;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -23,9 +19,6 @@ import org.bukkit.inventory.ItemStack;
  * Class: PetsMenu
  */
 public class PetsMenu extends ChestMenu<Cosmetic> {
-
-
-
     public PetsMenu() {
         super("Pets Menu", 9*6);
         this.update();
@@ -60,8 +53,6 @@ public class PetsMenu extends ChestMenu<Cosmetic> {
                     creeper.setCustomName(player.getName() + "Pets");
                     break;
                 case 40:
-
-
             }
         }
     }

@@ -1,4 +1,4 @@
-package me.sakio.cosmetic.menu;
+package me.sakio.cosmetic.manager.menu;
 
 import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.utils.InventoryUtils;

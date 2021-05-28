@@ -1,4 +1,4 @@
-package me.sakio.cosmetic.manager.provider;
+package me.sakio.cosmetic.manager.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

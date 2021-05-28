@@ -3,6 +3,7 @@ package me.sakio.cosmetic;
 import lombok.Getter;
 import me.sakio.cosmetic.commands.CosmeticCommand;
 import me.sakio.cosmetic.commands.OpenMenuCommand;
+import me.sakio.cosmetic.listener.GadgetsListener;
 import me.sakio.cosmetic.listener.JoinListener;
 import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
@@ -15,17 +16,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
 
-public final class Cosmetic extends JavaPlugin {
-    @Getter
+@Getter
+public class Cosmetic extends JavaPlugin {
     private static Cosmetic instance;
-    @Getter
-    private PlayerData playerData;
 
     @Override
     public void onEnable() {
         Bukkit.getServer().getConsoleSender().sendMessage("Working | sCosmetic");
         instance = this;
-        this.playerData = new PlayerData();
         reloadConfig();
         saveDefaultConfig();
         this.registerCommands();
@@ -36,7 +34,6 @@ public final class Cosmetic extends JavaPlugin {
     @Override
     public void onDisable() {}
 
-
     public void registerCommands() {
         this.registerCommands(
                 new CosmeticCommand(),
@@ -45,7 +42,8 @@ public final class Cosmetic extends JavaPlugin {
         this.registerListeners(
                 new MenuListener(),
                 new TrailsListener(),
-                new JoinListener()
+                new JoinListener(),
+                new GadgetsListener()
         );
     }
 
@@ -57,5 +55,11 @@ public final class Cosmetic extends JavaPlugin {
 
     private void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(l -> Bukkit.getServer().getPluginManager().registerEvents(l, this));
+    }
+    public static Cosmetic getInstance(){
+        return instance;
+    }
+    public PlayerData getPlayerData(){
+        return new PlayerData();
     }
 }

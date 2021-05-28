@@ -2,7 +2,7 @@ package me.sakio.cosmetic.listener;
 
 import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.provider.Trails;
+import me.sakio.cosmetic.manager.objects.Trails;
 import org.bukkit.Effect;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -2,8 +2,8 @@ package me.sakio.cosmetic.manager;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.sakio.cosmetic.manager.provider.Gadgets;
-import me.sakio.cosmetic.manager.provider.Trails;
+import me.sakio.cosmetic.manager.objects.Gadgets;
+import me.sakio.cosmetic.manager.objects.Trails;
 import me.sakio.cosmetic.utils.DataFile;
 import org.bukkit.entity.Player;
 
