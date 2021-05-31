@@ -28,7 +28,7 @@ public class Cosmetic extends JavaPlugin {
         saveDefaultConfig();
         this.registerCommands();
         this.registerListeners();
-        Bukkit.getScheduler().runTaskTimer(this, new RainbowTask(), 20, 0);
+        Bukkit.getScheduler().runTaskAsynchronously(this, new RainbowTask());
     }
 
     @Override
@@ -56,6 +56,7 @@ public class Cosmetic extends JavaPlugin {
     private void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(l -> Bukkit.getServer().getPluginManager().registerEvents(l, this));
     }
+
     public static Cosmetic getInstance(){
         return Cosmetic.getPlugin(Cosmetic.class);
     }
