@@ -40,10 +40,6 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onClick(PlayerInteractEvent event){
-        if (event.getItem() == null) return;
-        if (event.getAction() == Action.LEFT_CLICK_AIR) return;
-        if (event.getAction() == Action.LEFT_CLICK_BLOCK) return;
-
         Player player = event.getPlayer();
         Action action = event.getAction();
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
@@ -55,7 +51,6 @@ public class JoinListener implements Listener {
             }
         }
     }
-
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event){
         DataFile.getConfig().save();

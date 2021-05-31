@@ -9,6 +9,7 @@ public class Color {
 	public static String translate(String text) {
 		return ChatColor.translateAlternateColorCodes('&', text);
 	}
+
 	public static List<String> translate(List<String> text) {
 		return text.stream().map(Color::translate).collect(Collectors.toList());
 	}

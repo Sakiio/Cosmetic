@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
  */
 public class OpenMenuCommand {
     @Command(name = "menu")
-    public void OnCommand(CommandArgs cmd){
+    public void execute(CommandArgs cmd){
         Player player = cmd.getPlayer();
         new CosmeticMainMenu().open(player);
     }

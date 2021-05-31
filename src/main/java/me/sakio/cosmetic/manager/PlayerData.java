@@ -17,6 +17,7 @@ import org.bukkit.entity.Player;
 @Getter
 @Setter
 public class PlayerData {
+
     public void createData(Player player) {
         if (!DataFile.getConfig().getConfigurationSection("PLAYER-DATA").getKeys(false).contains(player.getUniqueId().toString())) {
             DataFile.getConfig().set("PLAYER-DATA." + player.getUniqueId() + ".NAME", player.getName());
@@ -26,6 +27,7 @@ public class PlayerData {
             DataFile.getConfig().saveAll();
         }
     }
+
     public String getTrails(Player player) {
         return DataFile.getConfig().getString("PLAYER-DATA." + player.getUniqueId() + ".TRAILS");
     }
@@ -34,6 +36,7 @@ public class PlayerData {
         DataFile.getConfig().set("PLAYER-DATA." + player.getUniqueId() + ".TRAILS", trails.getName());
         DataFile.getConfig().saveAll();
     }
+
     public String getGadgets(Player player) {
         return DataFile.getConfig().getString("PLAYER-DATA." + player.getUniqueId() + ".GADGETS");
     }

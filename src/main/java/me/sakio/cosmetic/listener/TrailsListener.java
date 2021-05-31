@@ -20,44 +20,14 @@ public class TrailsListener implements Listener {
     public void moveTrails(PlayerMoveEvent e){
         Player player = e.getPlayer();
         PlayerData playerData = Cosmetic.getInstance().getPlayerData();
-        if (playerData.getTrails(player).equals(Trails.DEFAULT.getName())){
+        Trails trail = Trails.valueOf(playerData.getTrails(player));
+        if (trail == Trails.DEFAULT)
             return;
-        }
-        if(playerData.getTrails(player).equals(Trails.FIRE.getName())){
-            player.getWorld().spigot().playEffect(
-                    player.getLocation(),
-                    Effect.FLAME,
-                    26, 0, 0.2F, 1, 1, 1, 2, 1);
-        }
-        if (playerData.getTrails(player).equals(Trails.NOTE.getName())){
-            player.getWorld().spigot().playEffect(
-                    player.getLocation(),
-                    Effect.NOTE,
-                    26, 0, 0.2F, 1, 1, 1, 2, 1);
-        }
-        if (playerData.getTrails(player).equals(Trails.FIREWORKS_SPARK.getName())){
-            player.getWorld().spigot().playEffect(
-                    player.getLocation(),
-                    Effect.FIREWORKS_SPARK, 26, 0,0.2F,1,1,1,2,1
-            );
-        }
-        if (playerData.getTrails(player).equals(Trails.HEART.getName())){
-            player.getWorld().spigot().playEffect(
-                    player.getLocation(),
-                    Effect.HEART, 26, 0,0.2F,1,1,1,2,1
-            );
-        }
-        if (playerData.getTrails(player).equals(Trails.CRITIC.getName())){
-            player.getWorld().spigot().playEffect(
-                    player.getLocation(),
-                    Effect.CRIT, 26, 0,0.2F,1,1,1,2,1
-            );
-        }
-        if (playerData.getTrails(player).equals(Trails.SMOKE.getName())){
-            player.getWorld().spigot().playEffect(
-                    player.getLocation(),
-                    Effect.SMOKE, 26, 0,0.2F,1,1,1,2,1
-            );
-        }
+        Effect effectType = trail.getEffect();
+        player.getWorld().spigot().playEffect(
+                player.getLocation(),
+                effectType,
+                26, 0, 0.2F, 1, 1, 1, 2, 1
+        );
     }
 }
