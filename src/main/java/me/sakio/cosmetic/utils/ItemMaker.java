@@ -179,7 +179,7 @@ public class ItemMaker implements Cloneable
         
         private final int data;
         
-        private SkullType(String s, int n, int data) {
+        SkullType(String s, int n, int data) {
             this.data = data;
         }
         
