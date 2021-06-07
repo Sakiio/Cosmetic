@@ -60,3 +60,10 @@ ITEM:
 # Gadgets
 GADGETS:
   SLOTS: 8 #Need set a free slots to get a gadgets item
+
+# Mongo Connection
+MONGO:
+  STATUS: false #Set false if you want use player-data.yml
+  URL: ""
+  NAME: ""
+  COLLECTION: ""
