@@ -1,4 +1,3 @@
-#delete lore if you want
 ARMORS:
   RED:
     NAME: "&4&lRed Armors"
@@ -44,12 +43,14 @@ ARMORS:
     NAME: "&3&lRainbow Armors"
     PERMS: "rainbow.armors"
     LORE: "&3&lColor: &a&lRainbow"
+#Delete lore if you want
+#Perms if the perms to set armors
 
 
-# Messages
+# Messages (No permissions)
 NO-PERMS: "&cYou dont have permissions to use this cosmetic!"
 
-# Item
+# Item to open menu with a click In-Game
 ITEM:
   STATUS: true
   SLOTS: 1 #Set a free slots
@@ -58,4 +59,4 @@ ITEM:
 
 # Gadgets
 GADGETS:
-  SLOTS: 8 #Set a free slots
+  SLOTS: 8 #Need set a free slots to get a gadgets item

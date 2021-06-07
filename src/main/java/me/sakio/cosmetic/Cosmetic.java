@@ -4,7 +4,7 @@ import lombok.Getter;
 import me.sakio.cosmetic.commands.CosmeticCommand;
 import me.sakio.cosmetic.commands.OpenMenuCommand;
 import me.sakio.cosmetic.listener.GadgetsListener;
-import me.sakio.cosmetic.listener.JoinListener;
+import me.sakio.cosmetic.listener.PlayerListener;
 import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.utils.commands.CommandFramework;
@@ -42,7 +42,7 @@ public class Cosmetic extends JavaPlugin {
         this.registerListeners(
                 new MenuListener(),
                 new TrailsListener(),
-                new JoinListener(),
+                new PlayerListener(),
                 new GadgetsListener()
         );
     }

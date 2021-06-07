@@ -11,7 +11,9 @@ public enum Gadgets {
     PEARLS("PEARLS", "gadgets.pearls"),
     SNOW_PEARLS("SNOW_PEARLS", "gadgets.snowball"),
     LITGTH_STRIKE("LIGTH_STRIKE", "gadgets.ligthstrike");
-
+    /*Add new gadgets with this format
+    GADGETS("NAME", "your.perms");
+     */
 
 
     private final String name;

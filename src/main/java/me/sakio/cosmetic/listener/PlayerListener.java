@@ -20,7 +20,7 @@ import org.bukkit.event.player.*;
  * Date: 04/01/2021 @ 17:44
  * Class: JoinListener
  */
-public class JoinListener implements Listener {
+public class PlayerListener implements Listener {
     @EventHandler
     public void JoinEvent(PlayerJoinEvent event){
         Player player = event.getPlayer();
@@ -39,20 +39,18 @@ public class JoinListener implements Listener {
     }
 
     @EventHandler
-    public void onClick(PlayerInteractEvent event){
+    public void onPlayerQuit(PlayerQuitEvent event){
+        DataFile.getConfig().save();
+    }
+
+    @EventHandler
+    public void onEnderChestClick(PlayerInteractEvent event){
         Player player = event.getPlayer();
         Action action = event.getAction();
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
-            if (event.getItem() == null) {
-                return;
-            }
             if (event.getItem().getType() == Material.ENDER_CHEST) {
                 new CosmeticMainMenu().open(player);
             }
         }
-    }
-    @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent event){
-        DataFile.getConfig().save();
     }
 }
