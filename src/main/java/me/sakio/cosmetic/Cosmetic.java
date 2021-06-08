@@ -37,7 +37,7 @@ public class Cosmetic extends JavaPlugin {
                 System.out.println("[MONGODB] Database Connected");
             } catch (Exception exception) {
                 exception.printStackTrace();
-                super.getLogger().severe("Could not connect to the MongoDB Database");
+                System.out.println("[MONGODB] Could not connect to the MongoDB Database");
                 super.getServer().getPluginManager().disablePlugin(this);
             }
         }
