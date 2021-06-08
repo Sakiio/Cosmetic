@@ -64,6 +64,7 @@ GADGETS:
 # Mongo Connection
 MONGO:
   STATUS: false #Set false if you want use player-data.yml
-  URL: ""
-  NAME: ""
-  COLLECTION: ""
+  HOST: "127.0.0.1"
+  PORT: 25565
+  NAME: "Cosmetic"
+  COLLECTION: "player_profile"

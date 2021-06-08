@@ -4,6 +4,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import lombok.Getter;
+import me.sakio.cosmetic.Cosmetic;
 
 /**
  * Project: Cosmetic
@@ -17,8 +18,8 @@ public class MongoConnection {
     private final MongoCollection profilesCollection;
 
     public MongoConnection() {
-        client = new MongoClient("127.0.0.1", 27017);
-        this.database = client.getDatabase("hydra");
-        this.profilesCollection = this.database.getCollection("profiles");
+        client = new MongoClient(Cosmetic.getInstance().getConfig().getString("MONGO.HOST"), Cosmetic.getInstance().getConfig().getInt("MONGO.PORT"));
+        this.database = client.getDatabase(Cosmetic.getInstance().getConfig().getString("MONGO.NAME"));
+        this.profilesCollection = this.database.getCollection(Cosmetic.getInstance().getConfig().getString("MONGO.COLLECTION"));
     }
 }
