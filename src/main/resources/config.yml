@@ -63,7 +63,7 @@ GADGETS:
 
 # Mongo Connection
 MONGO:
-  STATUS: false #Set false if you want use player-data.yml
+  STATUS: true #Set false if you want use player-data.yml
   HOST: "127.0.0.1"
   PORT: 25565
   NAME: "Cosmetic"
