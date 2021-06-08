@@ -1,24 +1,24 @@
 package me.sakio.cosmetic.manager.database;
 
 import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import me.sakio.cosmetic.Cosmetic;
-import org.bson.Document;
+import lombok.Getter;
 
 /**
  * Project: Cosmetic
  * Date: 07/06/2021 @ 22:53
  * Class: MongoConnection
  */
+@Getter
 public class MongoConnection {
-    public void mongoConnection(){
-        String mongoUrl = Cosmetic.getInstance().getConfig().getString("MONGO.URL");
-        MongoClientURI clientURI = new MongoClientURI(mongoUrl);
-        MongoClient mongoClient = new MongoClient(clientURI);
+    private final MongoClient client;
+    private final MongoDatabase database;
+    private final MongoCollection profilesCollection;
 
-        MongoDatabase mongoDatabase = mongoClient.getDatabase(Cosmetic.getInstance().getConfig().getString("MONGO.NAME"));
-        MongoCollection<Document> collection = mongoDatabase.getCollection(Cosmetic.getInstance().getConfig().getString("MONGO.COLLECTION"));
+    public MongoConnection() {
+        client = new MongoClient("127.0.0.1", 27017);
+        this.database = client.getDatabase("hydra");
+        this.profilesCollection = this.database.getCollection("profiles");
     }
 }

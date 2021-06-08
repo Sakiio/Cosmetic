@@ -20,6 +20,7 @@ import java.util.Arrays;
 @Getter
 public class Cosmetic extends JavaPlugin {
     private static Cosmetic instance;
+    private MongoConnection mongoConnection;
 
     @Override
     public void onEnable() {
@@ -30,9 +31,15 @@ public class Cosmetic extends JavaPlugin {
         this.registerCommands();
         this.registerListeners();
         Bukkit.getScheduler().runTaskAsynchronously(this, new RainbowTask());
-        if (getInstance().getConfig().getBoolean("MONGO.STATUS")){
-            new MongoConnection().mongoConnection();
-            System.out.println("[MONGODB] Database Connected");
+        if (getInstance().getConfig().getBoolean("MONGO.STATUS")) {
+            try {
+                this.mongoConnection = new MongoConnection();
+                System.out.println("[MONGODB] Database Connected");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                super.getLogger().severe("Could not connect to the MongoDB Database");
+                super.getServer().getPluginManager().disablePlugin(this);
+            }
         }
     }
 
