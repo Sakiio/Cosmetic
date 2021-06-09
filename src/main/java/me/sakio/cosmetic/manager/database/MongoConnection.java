@@ -1,6 +1,7 @@
 package me.sakio.cosmetic.manager.database;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import lombok.Getter;
@@ -13,13 +14,14 @@ import me.sakio.cosmetic.Cosmetic;
  */
 @Getter
 public class MongoConnection {
-    private final MongoClient client;
+    String uri = Cosmetic.getInstance().getConfig().getString("MONGO.LINK");
     private final MongoDatabase database;
     private final MongoCollection profilesCollection;
 
     public MongoConnection() {
-        client = new MongoClient(Cosmetic.getInstance().getConfig().getString("MONGO.HOST"), Cosmetic.getInstance().getConfig().getInt("MONGO.PORT"));
-        this.database = client.getDatabase(Cosmetic.getInstance().getConfig().getString("MONGO.NAME"));
+        MongoClientURI clientURI = new MongoClientURI(uri);
+        MongoClient mongoClient = new MongoClient(clientURI);
+        this.database = mongoClient.getDatabase(Cosmetic.getInstance().getConfig().getString("MONGO.NAME"));
         this.profilesCollection = this.database.getCollection(Cosmetic.getInstance().getConfig().getString("MONGO.COLLECTION"));
     }
 }
