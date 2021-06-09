@@ -54,9 +54,15 @@ public class GadgetsMenu extends ChestMenu<Cosmetic> {
             switch (event.getRawSlot()) {
                 case 11:
                     playerData.setGadgets(player, Gadgets.PEARLS);
+                    if (Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS")){
+                        playerDataMongo.setGadgets(Gadgets.PEARLS);
+                    }
                     break;
                 case 12:
                     playerData.setGadgets(player, Gadgets.SNOW_PEARLS);
+                    if (Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS")){
+                        playerDataMongo.setGadgets(Gadgets.SNOW_PEARLS);
+                    }
                     break;
                 case 40 :
                     if (playerData.getTrails(player).length() == 0) {
