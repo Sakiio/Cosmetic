@@ -9,10 +9,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerPreLoginEvent;
 
-import java.util.UUID;
 
 /**
  * Project: Cosmetic
@@ -21,7 +19,7 @@ import java.util.UUID;
  */
 public class LoadPLayerDataListener implements Listener {
     @EventHandler
-    public void onPreLoginLoad(AsyncPlayerPreLoginEvent event) {
+    public void onPreLoginLoad(PlayerPreLoginEvent event) {
         if (Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS")){
             new PlayerDataMongo(event.getUniqueId(), event.getName());
         }

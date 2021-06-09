@@ -63,7 +63,7 @@ GADGETS:
 
 # Mongo Connection
 MONGO:
-  STATUS: true #Set false if you want use player-data.yml
+  STATUS: false #Set false if you want use player-data.yml
   LINK: ""
   NAME: "Cosmetic"
   COLLECTION: "player_profiles"
