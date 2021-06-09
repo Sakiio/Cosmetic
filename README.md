@@ -43,8 +43,15 @@ Trails:
     
     SMOKE("HEART", Effect.SMOKE, "trails.smoke")
     
-    FIREWORKS_SPARK("FIREWORKS_SPARK", Effect.FIREWORKS_SPARK, "trails.fireworks")
+    FIREWORKS_SPARK("FIREWORKS_SPARK", Effect.FIREWORKS_SPARK, "trails.fireworks"
     
+    
+    
+# Preview
+![image](https://user-images.githubusercontent.com/65667910/121339069-670c6700-c91e-11eb-8686-df6681728a42.png)
+
+![image](https://user-images.githubusercontent.com/65667910/121339093-6e337500-c91e-11eb-830a-b71b546ecc51.png)
+
 
 
 
