@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerPreLoginEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 
 /**
@@ -33,5 +34,9 @@ public class LoadPLayerDataListener implements Listener {
             if (playerDataMongo.getGadgets() == null) playerDataMongo.setGadgets(Gadgets.DEFAULT);
             event.setJoinMessage(null);
         }
+    }
+    @EventHandler
+    public void onPlayerQuitSaveData(PlayerQuitEvent event){
+        Bukkit.getScheduler().runTaskAsynchronously(Cosmetic.getInstance(), () -> PlayerDataMongo.getPlayer(event.getPlayer()).save());
     }
 }
