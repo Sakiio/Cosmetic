@@ -32,15 +32,19 @@ public class PlayerListener implements Listener {
                     setLore(Cosmetic.getInstance().getConfig().getString("ITEM.LORE")).build());
         }
         if (!player.hasPlayedBefore()){
-            playerData.createData(player);
-            playerData.setTrails(player, Trails.DEFAULT);
-            playerData.setGadgets(player, Gadgets.DEFAULT);
+            if (!Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS")) {
+                playerData.createData(player);
+                playerData.setTrails(player, Trails.DEFAULT);
+                playerData.setGadgets(player, Gadgets.DEFAULT);
+            }
         }
     }
 
     @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent event){
-        DataFile.getConfig().save();
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        if (!Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS")) {
+            DataFile.getConfig().save();
+        }
     }
 
     @EventHandler
