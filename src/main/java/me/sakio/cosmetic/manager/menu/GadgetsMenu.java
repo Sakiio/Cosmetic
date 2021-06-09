@@ -2,6 +2,7 @@ package me.sakio.cosmetic.manager.menu;
 
 import me.sakio.cosmetic.Cosmetic;
 import me.sakio.cosmetic.manager.PlayerData;
+import me.sakio.cosmetic.manager.database.PlayerDataMongo;
 import me.sakio.cosmetic.manager.objects.Gadgets;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
@@ -48,6 +49,7 @@ public class GadgetsMenu extends ChestMenu<Cosmetic> {
             if (item == null || item.getType() == Material.AIR) return;
 
             Player player = (Player) event.getWhoClicked();
+            PlayerDataMongo playerDataMongo = new PlayerDataMongo(player.getUniqueId(), player.getName());
 
             switch (event.getRawSlot()) {
                 case 11:
