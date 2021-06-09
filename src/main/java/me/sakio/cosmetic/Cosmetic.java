@@ -4,7 +4,6 @@ import lombok.Getter;
 import me.sakio.cosmetic.commands.CosmeticCommand;
 import me.sakio.cosmetic.commands.OpenMenuCommand;
 import me.sakio.cosmetic.listener.GadgetsListener;
-import me.sakio.cosmetic.listener.LoadPLayerDataListener;
 import me.sakio.cosmetic.listener.PlayerListener;
 import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
