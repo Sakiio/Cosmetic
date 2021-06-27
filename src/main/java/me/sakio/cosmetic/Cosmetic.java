@@ -7,7 +7,6 @@ import me.sakio.cosmetic.listener.GadgetsListener;
 import me.sakio.cosmetic.listener.PlayerListener;
 import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.database.MongoConnection;
 import me.sakio.cosmetic.utils.commands.CommandFramework;
 import me.sakio.cosmetic.utils.menu.MenuListener;
 import me.sakio.cosmetic.utils.task.RainbowTask;
@@ -20,7 +19,6 @@ import java.util.Arrays;
 @Getter
 public class Cosmetic extends JavaPlugin {
     private static Cosmetic instance;
-    private MongoConnection mongoConnection;
 
     @Override
     public void onEnable() {
@@ -31,16 +29,6 @@ public class Cosmetic extends JavaPlugin {
         this.registerCommands();
         this.registerListeners();
         Bukkit.getScheduler().runTaskAsynchronously(this, new RainbowTask());
-        if (getInstance().getConfig().getBoolean("MONGO.STATUS")) {
-            try {
-                this.mongoConnection = new MongoConnection();
-                System.out.println("[MONGODB] Database Connected");
-            } catch (Exception exception) {
-                exception.printStackTrace();
-                System.out.println("[MONGODB] Could not connect to the MongoDB Database");
-                super.getServer().getPluginManager().disablePlugin(this);
-            }
-        }
     }
 
     @Override
@@ -55,8 +43,7 @@ public class Cosmetic extends JavaPlugin {
                 new MenuListener(),
                 new TrailsListener(),
                 new PlayerListener(),
-                new GadgetsListener(),
-                new LoadPLayerDataListener()
+                new GadgetsListener()
         );
     }
 
