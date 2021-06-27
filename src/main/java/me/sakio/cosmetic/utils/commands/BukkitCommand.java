@@ -20,7 +20,7 @@ public class BukkitCommand extends org.bukkit.command.Command {
 
     private final Plugin owningPlugin;
     protected BukkitCompleter completer;
-    private CommandExecutor executor;
+    private final CommandExecutor executor;
 
 
     protected BukkitCommand(String label, CommandExecutor executor, Plugin owner) {

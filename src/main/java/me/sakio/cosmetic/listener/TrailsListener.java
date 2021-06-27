@@ -23,6 +23,7 @@ public class TrailsListener implements Listener {
         Trails trail = Trails.valueOf(playerData.getTrails(player));
         if (trail == Trails.DEFAULT)
             return;
+
         Effect effectType = trail.getEffect();
         player.getWorld().spigot().playEffect(
                 player.getLocation(),

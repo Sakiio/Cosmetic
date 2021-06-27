@@ -28,9 +28,9 @@ import java.util.Map.Entry;
  */
 public class CommandFramework implements CommandExecutor {
 
-    private Map<String, Entry<Method, Object>> commandMap = new HashMap<String, Entry<Method, Object>>();
+    private final Map<String, Entry<Method, Object>> commandMap = new HashMap<String, Entry<Method, Object>>();
     private CommandMap map;
-    private Plugin plugin;
+    private final Plugin plugin;
 
     /**
      * Initializes the command framework and sets up the command maps
@@ -43,13 +43,7 @@ public class CommandFramework implements CommandExecutor {
                 Field field = SimplePluginManager.class.getDeclaredField("commandMap");
                 field.setAccessible(true);
                 map = (CommandMap) field.get(manager);
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            } catch (SecurityException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (NoSuchFieldException e) {
+            } catch (IllegalArgumentException | SecurityException | NoSuchFieldException | IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
@@ -71,10 +65,10 @@ public class CommandFramework implements CommandExecutor {
      */
     public boolean handleCommand(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
         for (int i = args.length; i >= 0; i--) {
-            StringBuffer buffer = new StringBuffer();
+            StringBuilder buffer = new StringBuilder();
             buffer.append(label.toLowerCase());
             for (int x = 0; x < i; x++) {
-                buffer.append("." + args[x].toLowerCase());
+                buffer.append(".").append(args[x].toLowerCase());
             }
             String cmdLabel = buffer.toString();
             if (commandMap.containsKey(cmdLabel)) {
@@ -92,11 +86,7 @@ public class CommandFramework implements CommandExecutor {
                 try {
                     method.invoke(methodObject, new CommandArgs(sender, cmd, label, args,
                             cmdLabel.split("\\.").length - 1));
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
+                } catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
                     e.printStackTrace();
                 }
                 return true;
@@ -126,7 +116,7 @@ public class CommandFramework implements CommandExecutor {
                 }
             } else if (m.getAnnotation(Completer.class) != null) {
                 Completer comp = m.getAnnotation(Completer.class);
-                if (m.getParameterTypes().length > 1 || m.getParameterTypes().length == 0
+                if (m.getParameterTypes().length != 1
                         || m.getParameterTypes()[0] != CommandArgs.class) {
                     System.out.println("Unable to register tab completer " + m.getName()
                             + ". Unexpected method arguments");
