@@ -33,5 +33,8 @@ public class ArmorUtils {
         player.getInventory().setChestplate(chestplate);
         player.getInventory().setLeggings(leggings);
         player.getInventory().setBoots(boots);
+        /**
+         * here you create armors item to remove excess of code
+         */
     }
 }
