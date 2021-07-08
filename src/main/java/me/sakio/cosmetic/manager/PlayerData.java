@@ -17,7 +17,6 @@ import org.bukkit.entity.Player;
 @Getter
 @Setter
 public class PlayerData {
-
     public void createData(Player player) {
         if (!DataFile.getConfig().getConfigurationSection("PLAYER-DATA").getKeys(false).contains(player.getUniqueId().toString())) {
             DataFile.getConfig().set("PLAYER-DATA." + player.getUniqueId() + ".NAME", player.getName());
