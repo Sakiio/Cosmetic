@@ -48,9 +48,6 @@ public class PetsMenu extends ChestMenu<Cosmetic> {
 
             switch (event.getRawSlot()) {
                 case 11:
-                    Creeper creeper = (Creeper) player.getWorld().spawnEntity(player.getLocation(), EntityType.CREEPER);
-                    creeper.setTarget(player);
-                    creeper.setCustomName(player.getName() + "Pets");
                     break;
                 case 40:
             }
