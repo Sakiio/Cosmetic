@@ -29,5 +29,4 @@ public class PetsListener implements Listener {
             event.getRightClicked().setPassenger(player);
         }
     }
-    }
 }
