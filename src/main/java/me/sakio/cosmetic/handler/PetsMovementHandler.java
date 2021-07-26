@@ -5,5 +5,5 @@ package me.sakio.cosmetic.handler;
  * Date: 26/07/2021 @ 19:41
  * Class: PetsMovementHandler
  */
-public class PetsMovementHandler {
+public class PetsMovementHandler  {
 }
