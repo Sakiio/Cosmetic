@@ -15,7 +15,7 @@ import org.bukkit.entity.EntityType;
 @Getter
 public enum Pets {
 
-    NONE("None",null, Material.REDSTONE_BLOCK),
+    DEFAULT("None",null, Material.REDSTONE_BLOCK),
     CREEPER("Creeper", EntityType.CREEPER, Material.TNT),
     SKELETON("Skeleton", EntityType.SKELETON, Material.ARROW),
     ZOMBIE("Zombie", EntityType.ZOMBIE, Material.ROTTEN_FLESH),
