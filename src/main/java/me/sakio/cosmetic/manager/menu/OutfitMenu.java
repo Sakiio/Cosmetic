@@ -22,6 +22,8 @@ import java.util.Arrays;
  * Class: OutfitMenu
  */
 public class OutfitMenu extends ChestMenu<Cosmetic> {
+    
+    private final Cosmetic plugin = Cosmetic.getInstance();
 
     public OutfitMenu() {
         super("Outfit Menu", 9*6);
@@ -123,102 +125,102 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
             Player player = (Player) event.getWhoClicked();
             switch (event.getRawSlot()) {
                 case 11:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.RED.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.RED.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.RED, "RED");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 12:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.BLUE.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.BLUE.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.BLUE, "BLUE");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 13:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.GREEN.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.GREEN.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.GREEN, "GREEN");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 14:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.ORANGE.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.ORANGE.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.ORANGE, "ORANGE");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 15:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.YELLOW.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.YELLOW.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.YELLOW, "YELLOW");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 20:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.BLACK.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.BLACK.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.BLACK, "BLACK");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 21:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.AQUA.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.AQUA.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.AQUA, "AQUA");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 22:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.PURPLE.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.PURPLE.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.PURPLE, "PURPLE");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 23:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.GRAY.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.GRAY.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.GRAY, "GRAY");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 24:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.MAROON.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.MAROON.PERMS"))) {
                         ArmorUtils.getArmor(player, Color.MAROON, "MAROON");
                         player.closeInventory();
                         break;
                     }
                     player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                            (plugin.getConfig().getString("NO-PERMS")));
                     break;
                 case 29:
-                    if (player.hasPermission(Cosmetic.getInstance().getConfig().getString("ARMORS.RAINBOW.PERMS"))) {
+                    if (player.hasPermission(plugin.getConfig().getString("ARMORS.RAINBOW.PERMS"))) {
                         RainbowTask.players.add(player);
                         player.closeInventory();
                         break;
                     }
-                    player.sendMessage(me.sakio.cosmetic.utils.Color.translate(Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                    player.sendMessage(me.sakio.cosmetic.utils.Color.translate(plugin.getConfig().getString("NO-PERMS")));
                     break;
                     case 40:
                     if (player.getInventory().getArmorContents().length == 0) {
