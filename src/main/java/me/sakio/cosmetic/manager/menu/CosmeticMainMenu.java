@@ -24,10 +24,12 @@ import java.util.Arrays;
  */
 public class CosmeticMainMenu extends ChestMenu<Cosmetic> {
     private final PlayerData playerData = Cosmetic.getInstance().getPlayerData();
+
     public CosmeticMainMenu() {
         super("Main Menu", 9*3);
         this.update();
     }
+
     public void update(){
         this.inventory.setItem(10, new ItemMaker(Material.LEATHER_CHESTPLATE).setColor(Color.RED).setTitle("&3Outfit")
                 .setLore(Arrays.asList(
@@ -36,6 +38,7 @@ public class CosmeticMainMenu extends ChestMenu<Cosmetic> {
                         ""
                         )
                 ).build());
+
         this.inventory.setItem(12, new ItemMaker(Material.BLAZE_ROD).setTitle("&4Trails")
                 .setLore(Arrays.asList(
                         "",
@@ -63,6 +66,7 @@ public class CosmeticMainMenu extends ChestMenu<Cosmetic> {
                         ""
                         )
                 ).build());
+
         InventoryUtils.getFill(inventory);
     }
 

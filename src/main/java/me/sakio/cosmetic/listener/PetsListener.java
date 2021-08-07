@@ -16,6 +16,10 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
  */
 public class PetsListener implements Listener {
 
+    /*
+    pets system is not finish atm
+     */
+
     @EventHandler
     public void onClickPets(PlayerInteractEntityEvent event){
         Player player = event.getPlayer();
