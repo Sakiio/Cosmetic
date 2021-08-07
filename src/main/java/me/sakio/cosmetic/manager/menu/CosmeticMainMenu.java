@@ -26,7 +26,7 @@ public class CosmeticMainMenu extends ChestMenu<Cosmetic> {
     private final PlayerData playerData = Cosmetic.getInstance().getPlayerData();
 
     public CosmeticMainMenu() {
-        super("Main Menu", 9*3);
+        super("Main Menu", 9*4);
         this.update();
     }
 
