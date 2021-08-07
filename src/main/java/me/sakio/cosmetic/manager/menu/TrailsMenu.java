@@ -74,7 +74,7 @@ public class TrailsMenu extends ChestMenu<Cosmetic> {
                     break;
                 case 40 :
                     if (playerData.getTrails(player).length() == 0) {
-                        player.sendMessage(Color.translate("&cYou dont have any trails to remove!"));
+                        player.sendMessage(Color.translate("&cYou don't have any trails to remove!"));
                         return;
                     }
                     if (playerData.getTrails(player).length() > 0) {
