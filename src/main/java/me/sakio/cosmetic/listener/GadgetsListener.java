@@ -33,7 +33,7 @@ public class GadgetsListener implements Listener {
             player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.SNOW_BALL).setAmount(64).build());
 
 
-        if (playerData.getGadgets(player).equals(Gadgets.LITGTH_STRIKE.getName()))
+        if (playerData.getGadgets(player).equals(Gadgets.LIGHT_STRIKE.getName()))
             player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.BLAZE_ROD).setAmount(1).build());
 
 

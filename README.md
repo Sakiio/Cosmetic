@@ -19,6 +19,8 @@ Lombok
 
 If you want add more gadgets or trails look the code and copy the example
 
+This code have got a bad menu api if you want use this plugin remove menu api and use a bukkit inventory
+
 This plugins is make to learns more, you can fork to make new trails or optimize the code
 # Permissions
 This is relative, you can edit all permissions in enums (Trails.java, Gadgets.java)

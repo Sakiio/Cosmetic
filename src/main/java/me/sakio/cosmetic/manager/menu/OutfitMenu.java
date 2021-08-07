@@ -218,13 +218,12 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                         player.closeInventory();
                         break;
                     }
-                    player.sendMessage(me.sakio.cosmetic.utils.Color.translate
-                            (Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
+                    player.sendMessage(me.sakio.cosmetic.utils.Color.translate(Cosmetic.getInstance().getConfig().getString("NO-PERMS")));
                     break;
                     case 40:
                     if (player.getInventory().getArmorContents().length == 0) {
                         player.sendMessage(me.sakio.cosmetic.utils.Color.translate("&cYou dont have any cosmetic to remove!"));
-                        break;
+                        return;
                     }
                     if (player.getInventory().getArmorContents().length > 0) {
                         player.getInventory().setHelmet(null);
