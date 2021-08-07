@@ -21,6 +21,7 @@ public class TrailsListener implements Listener {
         Player player = e.getPlayer();
         PlayerData playerData = Cosmetic.getInstance().getPlayerData();
         Trails trail = Trails.valueOf(playerData.getTrails(player));
+
         if (trail == Trails.DEFAULT)
             return;
 

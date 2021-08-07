@@ -42,9 +42,8 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        if (!Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS")) {
+        if (!Cosmetic.getInstance().getConfig().getBoolean("MONGO.STATUS"))
             DataFile.getConfig().save();
-        }
     }
 
     @EventHandler
@@ -52,9 +51,8 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         Action action = event.getAction();
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
-            if (event.getItem().getType() == Material.ENDER_CHEST) {
+            if (event.getItem().getType() == Material.ENDER_CHEST)
                 new CosmeticMainMenu().open(player);
-            }
         }
     }
 }

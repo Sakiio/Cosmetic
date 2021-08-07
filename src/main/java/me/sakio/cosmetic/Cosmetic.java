@@ -16,18 +16,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
 
-@Getter
 public class Cosmetic extends JavaPlugin {
-    private static Cosmetic instance;
 
     @Override
     public void onEnable() {
-        Bukkit.getServer().getConsoleSender().sendMessage("Working | sCosmetic");
-        instance = this;
         reloadConfig();
         saveDefaultConfig();
+
         this.registerCommands();
         this.registerListeners();
+
         Bukkit.getScheduler().runTaskAsynchronously(this, new RainbowTask());
     }
 

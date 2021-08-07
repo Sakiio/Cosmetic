@@ -25,8 +25,7 @@ public class PetsListener implements Listener {
         if(playerData.getPets(player).equals(Pets.DEFAULT.getName()))
             return;
 
-        if(event.getRightClicked().equals(pets)) {
+        if(event.getRightClicked().getType().equals(pets.getType()))
             event.getRightClicked().setPassenger(player);
-        }
     }
 }

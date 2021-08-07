@@ -23,19 +23,19 @@ public class GadgetsListener implements Listener {
     public void onJoinItem(PlayerJoinEvent event){
         Player player = event.getPlayer();
         PlayerData playerData = Cosmetic.getInstance().getPlayerData();
-        if (playerData.getGadgets(player).equals(Gadgets.DEFAULT.getName())){
+        if (playerData.getGadgets(player).equals(Gadgets.DEFAULT.getName()))
             return;
-        }
-        if (playerData.getGadgets(player).equals(Gadgets.PEARLS.getName())){
-            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.ENDER_PEARL).setAmount(64).build());
-        }
-        if (playerData.getGadgets(player).equals(Gadgets.SNOW_PEARLS.getName())){
-            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.SNOW_BALL).setAmount(64).build());
-        }
 
-        if (playerData.getGadgets(player).equals(Gadgets.LITGTH_STRIKE.getName())){
+        if (playerData.getGadgets(player).equals(Gadgets.PEARLS.getName()))
+            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.ENDER_PEARL).setAmount(64).build());
+
+        if (playerData.getGadgets(player).equals(Gadgets.SNOW_PEARLS.getName()))
+            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.SNOW_BALL).setAmount(64).build());
+
+
+        if (playerData.getGadgets(player).equals(Gadgets.LITGTH_STRIKE.getName()))
             player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.BLAZE_ROD).setAmount(1).build());
-        }
+
 
     }
     @EventHandler
@@ -47,9 +47,9 @@ public class GadgetsListener implements Listener {
         Action action = event.getAction();
 
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
-            if (event.getItem() == null) {
+            if (event.getItem() == null)
                 return;
-            }
+
             if (event.getItem().getType() == Material.ENDER_PEARL) {
                 if (player.getVehicle() != null) {
                     player.getVehicle().remove();
@@ -77,8 +77,8 @@ public class GadgetsListener implements Listener {
             player.updateInventory();
             event.setCancelled(false);
         }
-        if (event.getItem().getType() == Material.BLAZE_ROD){
+        if (event.getItem().getType() == Material.BLAZE_ROD)
             player.getWorld().spigot().strikeLightning(player.getLocation(), false);
-        }
+
     }
 }
