@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
  * Class: CosmeticCommand
  */
 public class CosmeticCommand {
-    @Command(name = "cosmetic", aliases = {"developer"})
+    @Command(name = "cosmetic", aliases = {"developer"}, inGameOnly = false)
     public void execute(CommandArgs cmd) {
         Player player = cmd.getPlayer();
             player.sendMessage(Color.translate("&8------------------------------------------------"));
