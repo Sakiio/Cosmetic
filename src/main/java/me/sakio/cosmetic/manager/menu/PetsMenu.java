@@ -25,7 +25,7 @@ public class PetsMenu extends ChestMenu<Cosmetic> {
     }
 
     public void update(){
-        this.inventory.setItem(11, new ItemMaker(Material.BLAZE_POWDER).setTitle("Test").build());
+        this.inventory.setItem(11, new ItemMaker(Material.SKULL).setSkullType(ItemMaker.SkullType.CREEPER).setTitle("Creeper").build());
         this.inventory.setItem(40, new ItemMaker(Material.REDSTONE).setTitle("&4Remove Pets").build());
         InventoryUtils.getFill(inventory);
     }

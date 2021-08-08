@@ -37,5 +37,4 @@ public interface Menu extends InventoryHolder {
         }
         return result;
     }
-
 }
