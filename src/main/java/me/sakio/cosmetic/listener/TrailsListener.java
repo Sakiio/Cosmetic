@@ -29,7 +29,7 @@ public class TrailsListener implements Listener {
         player.getWorld().spigot().playEffect(
                 player.getLocation(),
                 effectType,
-                26, 0, 0.2F, 1, 1, 1, 2, 1
+                26, 0, 0.2F, 1, 1, 2, 2, 256
         );
     }
 }

@@ -15,7 +15,12 @@ public enum Trails {
     HEART("HEART", Effect.HEART, "trails.heart"),
     CRITIC("CRITIC", Effect.CRIT, "trails.critic"),
     SMOKE("HEART", Effect.SMOKE, "trails.smoke"),
-    FIREWORKS_SPARK("FIREWORKS_SPARK", Effect.FIREWORKS_SPARK, "trails.fireworks");
+    FIREWORKS_SPARK("FIREWORKS_SPARK", Effect.FIREWORKS_SPARK, "trails.fireworks"),
+    PORTAL("PORTAL", Effect.PORTAL, "trails.portal"),
+    EXPLOSION("EXPLOSION", Effect.EXPLOSION, "trails.explosion"),
+    WITCH_MAGIC("WITCH_MAGIC", Effect.WITCH_MAGIC, "trails.witch");
+
+
     /*Add new trails with this format
     TRAILS("NAME", Effect.YourEffect, "your.perms");
      */
