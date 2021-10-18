@@ -1,12 +1,10 @@
 package me.sakio.cosmetic;
 
-import me.sakio.cosmetic.commands.CosmeticCommand;
 import me.sakio.cosmetic.commands.OpenMenuCommand;
 import me.sakio.cosmetic.listener.GadgetsListener;
 import me.sakio.cosmetic.listener.PlayerListener;
 import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.utils.commands.CommandFramework;
 import me.sakio.cosmetic.utils.menu.MenuListener;
 import me.sakio.cosmetic.task.RainbowTask;
 import org.bukkit.Bukkit;
@@ -22,7 +20,6 @@ public class Cosmetic extends JavaPlugin {
         reloadConfig();
         saveDefaultConfig();
 
-        this.registerCommands();
         this.registerListeners();
 
         Bukkit.getScheduler().runTaskAsynchronously(this, new RainbowTask());
@@ -31,23 +28,15 @@ public class Cosmetic extends JavaPlugin {
     @Override
     public void onDisable() {}
 
-    public void registerCommands() {
-        this.registerCommands(
-                new CosmeticCommand(),
-                new OpenMenuCommand()
-        );
+    public void init() {
         this.registerListeners(
                 new MenuListener(),
                 new TrailsListener(),
                 new PlayerListener(),
                 new GadgetsListener()
         );
-    }
 
-    private void registerCommands(Object... command) {
-        CommandFramework commandFramework = new CommandFramework(this);
-        Arrays.stream(command).forEach(commandFramework::registerCommands);
-
+        this.getServer().getPluginCommand("menu").setExecutor(new OpenMenuCommand());
     }
 
     private void registerListeners(Listener... listeners) {
