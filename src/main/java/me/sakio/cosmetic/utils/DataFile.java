@@ -2,7 +2,7 @@ package me.sakio.cosmetic.utils;
 
 import java.io.File;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
@@ -21,7 +21,7 @@ public class DataFile extends YamlConfiguration {
     }
     
     private Plugin main() {
-        return Cosmetic.getInstance();
+        return PluginMain.getInstance();
     }
     
     public DataFile() {

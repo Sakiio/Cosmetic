@@ -1,14 +1,11 @@
 package me.sakio.cosmetic.manager.menu;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;
 import org.bukkit.Material;
-import org.bukkit.entity.Creeper;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -18,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
  * Date: 01/03/2021 @ 19:17
  * Class: PetsMenu
  */
-public class PetsMenu extends ChestMenu<Cosmetic> {
+public class PetsMenu extends ChestMenu<PluginMain> {
     public PetsMenu() {
         super("Pets Menu", 9*6);
         this.update();

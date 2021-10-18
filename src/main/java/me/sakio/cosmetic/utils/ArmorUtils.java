@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.utils;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 public class ArmorUtils {
 
     public static void getArmor(Player player, Color color, String nameColor) {
-        Cosmetic plugin = Cosmetic.getInstance();
+        PluginMain plugin = PluginMain.getInstance();
 
         ItemStack helmet = new ItemMaker(Material.LEATHER_HELMET).
                 setColor(color).

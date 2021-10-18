@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.manager.menu;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.manager.objects.Gadgets;
 import me.sakio.cosmetic.manager.objects.Trails;
@@ -22,8 +22,8 @@ import java.util.Arrays;
  * Date: 26/12/2020 @ 16:57
  * Class: CosmeticMainMenu
  */
-public class CosmeticMainMenu extends ChestMenu<Cosmetic> {
-    private final PlayerData playerData = Cosmetic.getInstance().getPlayerData();
+public class CosmeticMainMenu extends ChestMenu<PluginMain> {
+    private final PlayerData playerData = PluginMain.getInstance().getPlayerData();
 
     public CosmeticMainMenu() {
         super("Main Menu", 9*4);

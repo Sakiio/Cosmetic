@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.listener;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.manager.objects.Gadgets;
 import me.sakio.cosmetic.utils.ItemMaker;
@@ -22,19 +22,19 @@ public class GadgetsListener implements Listener {
     @EventHandler
     public void onJoinItem(PlayerJoinEvent event){
         Player player = event.getPlayer();
-        PlayerData playerData = Cosmetic.getInstance().getPlayerData();
+        PlayerData playerData = PluginMain.getInstance().getPlayerData();
         if (playerData.getGadgets(player).equals(Gadgets.DEFAULT.getName()))
             return;
 
         if (playerData.getGadgets(player).equals(Gadgets.PEARLS.getName()))
-            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.ENDER_PEARL).setAmount(64).build());
+            player.getInventory().setItem(PluginMain.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.ENDER_PEARL).setAmount(64).build());
 
         if (playerData.getGadgets(player).equals(Gadgets.SNOW_PEARLS.getName()))
-            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.SNOW_BALL).setAmount(64).build());
+            player.getInventory().setItem(PluginMain.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.SNOW_BALL).setAmount(64).build());
 
 
         if (playerData.getGadgets(player).equals(Gadgets.LIGHT_STRIKE.getName()))
-            player.getInventory().setItem(Cosmetic.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.BLAZE_ROD).setAmount(1).build());
+            player.getInventory().setItem(PluginMain.getInstance().getConfig().getInt("GADGETS.SLOTS"), new ItemMaker(Material.BLAZE_ROD).setAmount(1).build());
 
 
     }

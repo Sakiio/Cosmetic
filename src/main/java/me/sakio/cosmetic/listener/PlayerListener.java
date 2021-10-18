@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.listener;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.manager.objects.Gadgets;
 import me.sakio.cosmetic.manager.objects.Trails;
@@ -22,7 +22,7 @@ import org.bukkit.inventory.ItemStack;
  * Class: JoinListener
  */
 public class PlayerListener implements Listener {
-    private final Cosmetic plugin = Cosmetic.getInstance();
+    private final PluginMain plugin = PluginMain.getInstance();
     
     @EventHandler
     public void JoinEvent(PlayerJoinEvent event){

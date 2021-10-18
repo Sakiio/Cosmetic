@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.manager.menu;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.manager.objects.Trails;
 import me.sakio.cosmetic.utils.Color;
@@ -19,8 +19,8 @@ import org.bukkit.inventory.ItemStack;
  * Date: 01/01/2021 @ 15:24
  * Class: TrailsMenu
  */
-public class TrailsMenu extends ChestMenu<Cosmetic> {
-    private final PlayerData playerData = Cosmetic.getInstance().getPlayerData();
+public class TrailsMenu extends ChestMenu<PluginMain> {
+    private final PlayerData playerData = PluginMain.getInstance().getPlayerData();
 
     public TrailsMenu() {
         super("Trails Menu", 9*6);

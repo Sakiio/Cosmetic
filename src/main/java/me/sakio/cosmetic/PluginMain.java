@@ -13,14 +13,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
 
-public class Cosmetic extends JavaPlugin {
+public class PluginMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
         reloadConfig();
         saveDefaultConfig();
 
-        this.registerListeners();
+        this.init();
 
         Bukkit.getScheduler().runTaskAsynchronously(this, new RainbowTask());
     }
@@ -36,15 +36,15 @@ public class Cosmetic extends JavaPlugin {
                 new GadgetsListener()
         );
 
-        this.getServer().getPluginCommand("menu").setExecutor(new OpenMenuCommand());
+        getServer().getPluginCommand("menu").setExecutor(new OpenMenuCommand());
     }
 
     private void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(l -> Bukkit.getServer().getPluginManager().registerEvents(l, this));
     }
 
-    public static Cosmetic getInstance(){
-        return Cosmetic.getPlugin(Cosmetic.class);
+    public static PluginMain getInstance(){
+        return PluginMain.getPlugin(PluginMain.class);
     }
     public PlayerData getPlayerData(){
         return new PlayerData();

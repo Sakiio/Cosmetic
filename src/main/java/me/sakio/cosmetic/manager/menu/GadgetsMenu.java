@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.manager.menu;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.manager.database.PlayerDataMongo;
 import me.sakio.cosmetic.manager.objects.Gadgets;
@@ -19,9 +19,9 @@ import org.bukkit.inventory.ItemStack;
  * Date: 05/01/2021 @ 23:43
  * Class: GadgetsMenu
  */
-public class GadgetsMenu extends ChestMenu<Cosmetic> {
+public class GadgetsMenu extends ChestMenu<PluginMain> {
 
-    private final PlayerData playerData = Cosmetic.getInstance().getPlayerData();
+    private final PlayerData playerData = PluginMain.getInstance().getPlayerData();
 
     public GadgetsMenu() {
         super("Gadgets Menu", 9*6);

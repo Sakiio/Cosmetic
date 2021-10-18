@@ -1,5 +1,8 @@
 name: sCosmetic
 version: ${project.version}
-main: me.sakio.cosmetic.Cosmetic
+main: me.sakio.cosmetic.PluginMain
 api-version: 1.8.9
 authors: [Sakio_]
+commands:
+  menu:
+    description: open cosmetic main menu with this command

@@ -1,6 +1,6 @@
 package me.sakio.cosmetic.manager.menu;
 
-import me.sakio.cosmetic.Cosmetic;
+import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.utils.ArmorUtils;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
@@ -21,9 +21,9 @@ import java.util.Arrays;
  * Date: 27/12/2020 @ 11:15
  * Class: OutfitMenu
  */
-public class OutfitMenu extends ChestMenu<Cosmetic> {
+public class OutfitMenu extends ChestMenu<PluginMain> {
     
-    private final Cosmetic plugin = Cosmetic.getInstance();
+    private final PluginMain plugin = PluginMain.getInstance();
 
     public OutfitMenu() {
         super("Outfit Menu", 9*6);
