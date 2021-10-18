@@ -1,6 +1,5 @@
 package me.sakio.cosmetic;
 
-import lombok.Getter;
 import me.sakio.cosmetic.commands.CosmeticCommand;
 import me.sakio.cosmetic.commands.OpenMenuCommand;
 import me.sakio.cosmetic.listener.GadgetsListener;
@@ -9,7 +8,7 @@ import me.sakio.cosmetic.listener.TrailsListener;
 import me.sakio.cosmetic.manager.PlayerData;
 import me.sakio.cosmetic.utils.commands.CommandFramework;
 import me.sakio.cosmetic.utils.menu.MenuListener;
-import me.sakio.cosmetic.utils.task.RainbowTask;
+import me.sakio.cosmetic.task.RainbowTask;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;

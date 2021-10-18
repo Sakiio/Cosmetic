@@ -79,6 +79,5 @@ public class GadgetsListener implements Listener {
         }
         if (event.getItem().getType() == Material.BLAZE_ROD)
             player.getWorld().spigot().strikeLightning(player.getLocation(), false);
-
     }
 }

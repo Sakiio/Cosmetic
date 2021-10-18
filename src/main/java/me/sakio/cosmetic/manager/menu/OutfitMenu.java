@@ -5,7 +5,7 @@ import me.sakio.cosmetic.utils.ArmorUtils;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;
-import me.sakio.cosmetic.utils.task.RainbowTask;
+import me.sakio.cosmetic.task.RainbowTask;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -29,6 +29,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
         super("Outfit Menu", 9*6);
         this.update();
     }
+
     public void update(){
         this.inventory.setItem(11, new ItemMaker(Material.LEATHER_CHESTPLATE).setColor(Color.RED).setTitle("Red Armor")
                 .setLore(Arrays.asList(
@@ -224,7 +225,7 @@ public class OutfitMenu extends ChestMenu<Cosmetic> {
                     break;
                     case 40:
                     if (player.getInventory().getArmorContents().length == 0) {
-                        player.sendMessage(me.sakio.cosmetic.utils.Color.translate("&cYou dont have any cosmetic to remove!"));
+                        player.sendMessage(me.sakio.cosmetic.utils.Color.translate("&cYou don't have any cosmetic to remove!"));
                         return;
                     }
                     if (player.getInventory().getArmorContents().length > 0) {
