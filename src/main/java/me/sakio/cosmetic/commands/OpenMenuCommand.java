@@ -16,11 +16,12 @@ import org.bukkit.entity.Player;
 public class OpenMenuCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Player player = (Player) sender;
+
         if (!sender.hasPermission("menu.open")){
             sender.sendMessage(Color.translate("&cNo!"));
             return true;
         }
-        Player player = (Player) sender;
 
         new CosmeticMainMenu().open(player);
         return false;
