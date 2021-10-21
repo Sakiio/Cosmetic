@@ -32,6 +32,7 @@ public class ArmorUtils {
                 setColor(color).
                 setTitle(plugin.getConfig().getString("ARMORS." + nameColor + ".NAME")).
                 setLore(plugin.getConfig().getString("ARMORS." + nameColor + ".LORE")).build();
+
         player.getInventory().setHelmet(helmet);
         player.getInventory().setChestplate(chestplate);
         player.getInventory().setLeggings(leggings);

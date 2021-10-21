@@ -44,12 +44,12 @@ ARMORS:
     PERMS: "rainbow.armors"
     LORE: "&3&lColor: &a&lRainbow"
 #Delete lore if you want
-#Perms if the perms to set armors
+#Perms to set armors
 
-# Messages (No permissions)
+# Messages (When you don't have permissions)
 NO-PERMS: "&cYou dont have permissions to use this cosmetic!"
 
-# Item to open menu with a click In-Game
+# Item to open menu with a click (in-game)
 ITEM:
   STATUS: true
   SLOTS: 1 #Set a free slots
