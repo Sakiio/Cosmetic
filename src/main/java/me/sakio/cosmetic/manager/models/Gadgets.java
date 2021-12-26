@@ -1,4 +1,4 @@
-package me.sakio.cosmetic.manager.objects;
+package me.sakio.cosmetic.manager.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,6 +11,7 @@ public enum Gadgets {
     PEARLS("PEARLS", "gadgets.pearls"),
     SNOW_PEARLS("SNOW_PEARLS", "gadgets.snowball"),
     LIGHT_STRIKE("LIGHT_STRIKE", "gadgets.light_strike");
+
     /*Add new gadgets with this format
     GADGETS("NAME", "your.perms");
      */

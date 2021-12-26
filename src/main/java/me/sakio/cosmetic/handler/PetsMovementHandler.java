@@ -9,4 +9,5 @@ import org.bukkit.inventory.ItemStack;
  * Class: PetsMovementHandler
  */
 public class PetsMovementHandler  {
+
 }

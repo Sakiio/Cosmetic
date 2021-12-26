@@ -2,7 +2,7 @@ package me.sakio.cosmetic.listener;
 
 import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.objects.Gadgets;
+import me.sakio.cosmetic.manager.models.Gadgets;
 import me.sakio.cosmetic.utils.ItemMaker;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

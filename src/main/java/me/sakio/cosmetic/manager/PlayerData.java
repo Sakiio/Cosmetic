@@ -2,9 +2,9 @@ package me.sakio.cosmetic.manager;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.sakio.cosmetic.manager.objects.Gadgets;
-import me.sakio.cosmetic.manager.objects.Pets;
-import me.sakio.cosmetic.manager.objects.Trails;
+import me.sakio.cosmetic.manager.models.Gadgets;
+import me.sakio.cosmetic.manager.models.Pets;
+import me.sakio.cosmetic.manager.models.Trails;
 import me.sakio.cosmetic.utils.DataFile;
 import org.bukkit.entity.Player;
 

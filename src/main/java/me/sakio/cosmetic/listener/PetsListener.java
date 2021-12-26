@@ -1,9 +1,7 @@
 package me.sakio.cosmetic.listener;
 
-import com.avaje.ebean.validation.Email;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.objects.Pets;
-import me.sakio.cosmetic.manager.objects.Trails;
+import me.sakio.cosmetic.manager.models.Pets;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,5 +29,7 @@ public class PetsListener implements Listener {
 
         if(event.getRightClicked().getType().equals(pets.getType()))
             event.getRightClicked().setPassenger(player);
+
+        //TODO: add pet system
     }
 }

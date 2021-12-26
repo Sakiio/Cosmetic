@@ -2,8 +2,8 @@ package me.sakio.cosmetic.manager.menu;
 
 import me.sakio.cosmetic.PluginMain;
 import me.sakio.cosmetic.manager.PlayerData;
-import me.sakio.cosmetic.manager.objects.Gadgets;
-import me.sakio.cosmetic.manager.objects.Trails;
+import me.sakio.cosmetic.manager.models.Gadgets;
+import me.sakio.cosmetic.manager.models.Trails;
 import me.sakio.cosmetic.utils.InventoryUtils;
 import me.sakio.cosmetic.utils.ItemMaker;
 import me.sakio.cosmetic.utils.menu.type.ChestMenu;

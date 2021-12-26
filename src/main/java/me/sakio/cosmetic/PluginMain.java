@@ -46,6 +46,7 @@ public class PluginMain extends JavaPlugin {
     public static PluginMain getInstance(){
         return PluginMain.getPlugin(PluginMain.class);
     }
+
     public PlayerData getPlayerData(){
         return new PlayerData();
     }
