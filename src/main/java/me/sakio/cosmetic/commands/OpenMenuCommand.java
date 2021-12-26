@@ -19,7 +19,7 @@ public class OpenMenuCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         if (!sender.hasPermission("menu.open")){
-            sender.sendMessage(Color.translate("&cNo!"));
+            player.sendMessage(Color.translate("&cYou don't have permission to use this command!"));
             return true;
         }
 
