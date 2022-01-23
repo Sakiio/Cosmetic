@@ -23,7 +23,7 @@ This code have got a bad menu api if you want use this plugin remove menu api an
 
 This plugins is make to learns more, you can fork to make new trails or optimize the code
 # Permissions
-This is relative, you can edit all permissions in enums (Trails.java, Gadgets.java)
+This is relative, you can edit all permissions in enums (Trails.java, Gadgets.java).
 
 Gadgets:
 
