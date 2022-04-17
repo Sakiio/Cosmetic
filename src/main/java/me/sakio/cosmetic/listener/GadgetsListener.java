@@ -67,7 +67,7 @@ public class GadgetsListener implements Listener {
                 event.setCancelled(false);
             }
         }
-        
+
         if (event.getItem().getType() == Material.SNOW_BALL) {
             if (player.getVehicle() != null) {
                 player.getVehicle().remove();
