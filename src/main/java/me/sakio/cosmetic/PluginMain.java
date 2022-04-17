@@ -17,7 +17,6 @@ public class PluginMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        reloadConfig();
         saveDefaultConfig();
 
         this.init();
