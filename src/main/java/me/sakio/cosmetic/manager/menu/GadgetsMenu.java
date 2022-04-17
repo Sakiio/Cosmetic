@@ -48,7 +48,6 @@ public class GadgetsMenu extends ChestMenu<PluginMain> {
             if (item == null || item.getType() == Material.AIR) return;
 
             Player player = (Player) event.getWhoClicked();
-            PlayerDataMongo playerDataMongo = new PlayerDataMongo(player.getUniqueId(), player.getName());
 
             switch (event.getRawSlot()) {
                 case 11:
