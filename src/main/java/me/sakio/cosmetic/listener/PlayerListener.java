@@ -31,7 +31,8 @@ public class PlayerListener implements Listener {
         DataFile.getConfig().save();
 
         if (plugin.getConfig().getBoolean("ITEM.STATUS")) {
-            player.getInventory().setItem(plugin.getConfig().getInt("ITEM.SLOTS"), new ItemMaker(Material.ENDER_CHEST).
+            player.getInventory().setItem(plugin.getConfig().getInt("ITEM.SLOTS"),
+                    new ItemMaker(Material.ENDER_CHEST).
                     setTitle(plugin.getConfig().getString("ITEM.NAME")).
                     setLore(plugin.getConfig().getString("ITEM.LORE")).build());
         }
@@ -40,7 +41,7 @@ public class PlayerListener implements Listener {
             playerData.createData(player);
             playerData.setTrails(player, Trails.DEFAULT);
             playerData.setGadgets(player, Gadgets.DEFAULT);
-            System.out.println("Your data has been create (debug)");
+            System.out.println(player.getName() + " Your data has been created");
         }
     }
 
@@ -54,11 +55,11 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         Action action = event.getAction();
         ItemStack item = event.getItem();
+
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
             if (item.getType() == Material.ENDER_CHEST){
-                if (item.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("ITEM.NAME"))){
+                if (item.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("ITEM.NAME")))
                     new CosmeticMainMenu().open(player);
-                }
             }
         }
     }
