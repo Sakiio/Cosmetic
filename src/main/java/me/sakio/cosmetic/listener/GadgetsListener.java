@@ -40,11 +40,14 @@ public class GadgetsListener implements Listener {
     }
     @EventHandler
     public void onEventItem(PlayerInteractEvent event) {
-        if (event.getItem() == null) return;
-        if (event.getAction() == Action.LEFT_CLICK_AIR) return;
-        if (event.getAction() == Action.LEFT_CLICK_BLOCK) return;
         Player player = event.getPlayer();
         Action action = event.getAction();
+
+        if (event.getItem() == null) return;
+
+        if (event.getAction() == Action.LEFT_CLICK_AIR) return;
+
+        if (event.getAction() == Action.LEFT_CLICK_BLOCK) return;
 
         if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
             if (event.getItem() == null)
@@ -64,6 +67,7 @@ public class GadgetsListener implements Listener {
                 event.setCancelled(false);
             }
         }
+        
         if (event.getItem().getType() == Material.SNOW_BALL) {
             if (player.getVehicle() != null) {
                 player.getVehicle().remove();
@@ -77,6 +81,7 @@ public class GadgetsListener implements Listener {
             player.updateInventory();
             event.setCancelled(false);
         }
+
         if (event.getItem().getType() == Material.BLAZE_ROD)
             player.getWorld().spigot().strikeLightning(player.getLocation(), false);
     }
