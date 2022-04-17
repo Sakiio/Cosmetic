@@ -46,6 +46,7 @@ public class PlayerData {
         DataFile.getConfig().set("PLAYER-DATA." + player.getUniqueId() + ".GADGETS", gadgets.getName());
         DataFile.getConfig().saveAll();
     }
+
     public String getPets(Player player) {
         return DataFile.getConfig().getString("PLAYER-DATA." + player.getUniqueId() + ".PETS");
     }
